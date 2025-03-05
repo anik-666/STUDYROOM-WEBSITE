@@ -9,7 +9,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Room, Topic, Messages
 from .forms import RoomForm
 
-# Create your views here.w
+# Create your views here for the app
 
 ''' rooms = [
     {'id': 1, 'name': 'Lets learn python'},
