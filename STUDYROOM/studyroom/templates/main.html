@@ -3,14 +3,15 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+
+{% load static %}
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>StudyRoom</title>
-        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" type='text/css' media='screen' href="{% static 'styles/main.css' %}">
     </head>
     <body>
        
@@ -23,6 +24,15 @@
                 {% endfor %}
             </ul>
         {% endif %}
+
+        <style>
+            body {
+                background-image: url("{% static 'images/color.jpg' %}");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                }
+          </style>        
 
         {% block content %}
 
