@@ -1,42 +1,31 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-
 {% load static %}
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>StudyRoom</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type='text/css' media='screen' href="{% static 'styles/main.css' %}">
-    </head>
-    <body>
-       
-        {% include 'navbar.html' %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    <title>StudyRoom - Discuss your queries with study partners around the world!</title>
+  </head>
 
-        {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
+  <body>
+    
+    {% include 'navbar.html' %}
 
-        <style>
-            body {
-                background-image: url("{% static 'images/color.jpg' %}");
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                }
-          </style>        
+      {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+      {% endif %}
 
-        {% block content %}
+    {% block content %}
 
-        {% endblock content %}
-       
-    </body>
+    {% endblock content %}
+  
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
 </html>
