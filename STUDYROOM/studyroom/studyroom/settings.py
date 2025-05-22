@@ -58,6 +58,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'studyroom.urls'
 
+AUTH_USER_MODEL = 'base.User'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -129,6 +131,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
+
+MEDIA_URL = '/images/'
+
+MEDIA_ROOT = BASE_DIR / 'static/images'
 
 #STATIC_ROOT = 
 
