@@ -4,14 +4,14 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     # Add any additional fields you want to include in the User model
     
-    name = models.CharField(max_length=200,unique=True,blank=True)
+    name = models.CharField(max_length=200, blank=True)
     username = models.CharField(max_length=200, unique=True, null=True, blank=True)
     email = models.EmailField(unique=True, null=True)
     bio = models.TextField(null=True)
     avatar = models.ImageField(null=True, default='avatar.svg')
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+    REQUIRED_FIELDS = []
 class Topic(models.Model):
     
     name = models.CharField(max_length=200, null=False,)
